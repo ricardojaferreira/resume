@@ -38,15 +38,8 @@
 
 % more font size definitions
 \usepackage{moresize}		
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=black,      
-    urlcolor=black,
-}
 \usepackage{fontawesome}
-%\usepackage{fontawesome5}
+% \usepackage{fontawesome5}
 
 %------------------------------------------------------------------------------------
 %	PAGE LAYOUT  DEFINITIONS
@@ -123,7 +116,13 @@
 \definecolor{boldgrey}{RGB}{170,170,170}
 \definecolor{boldblue}{RGB}{7,45,171}
 
-
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=black,      
+    urlcolor=sectcol,
+}
 %============================================================================%
 %	DEFINITIONS
 %============================================================================%
@@ -327,7 +326,7 @@
 \begin{metasection}{Technologies}
 
 	\textcolor{black}{
-		PlayFramework {\scriptsize \faCircle} Zend Famework {\scriptsize \faCircle} Angular {\scriptsize \faCircle} Apache {\scriptsize \faCircle} Nginx {\scriptsize \faCircle} Git {\scriptsize \faCircle} MySql / MariaDB {\scriptsize \faCircle} MongoDB {\scriptsize \faCircle} ElasticSearch {\scriptsize \faCircle} Couchbase {\scriptsize \faCircle} RabbitMQ {\scriptsize \faCircle} \LaTeX %chktex 1	
+        PlayFramework {\tiny \icon{Circle}{6}{black}} Spring {\scriptsize \faCircle} Zend Famework {\tiny \icon{Circle}{6}{black}} Angular {\scriptsize \faCircle} Apache {\scriptsize \faCircle} Nginx {\scriptsize \faCircle} Git {\scriptsize \faCircle} MySql / MariaDB {\scriptsize \faCircle} MongoDB {\scriptsize \faCircle} ElasticSearch {\scriptsize \faCircle} Couchbase {\scriptsize \faCircle} RabbitMQ {\scriptsize \faCircle} \LaTeX %chktex 1	
 	}
 \end{metasection}
 
@@ -350,7 +349,9 @@
 	\textcolor{black}{\large{\icon{Plane}{20}{black} \icon{Headphones}{20}{black}  \icon{Bicycle}{20}{black} \icon{Laptop}{20}{black}}}
 \end{metasection}
 
-See the extended version at 
+\begin{center}
+    See the extended version at \href{https://git.io/fhQUd}{https://git.io/fhQUd}.
+\end{center}
 
 \end{minipage}}%
 \fcolorbox{white}{white}{\begin{minipage}[c][0.95\textheight][t]{0.72\linewidth}
@@ -433,11 +434,10 @@ See the extended version at
 
 \null %chktex 1
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut\small \textcolor{white}{Resume 2018 | Ricardo Ferreira :: ricarraf@gmail.com} $\cdot$ \textcolor{white}{:: 916 151 56 5}}}
+\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut\small \textcolor{white}{Resume 2019 | Ricardo Ferreira :: ricarraf@gmail.com} $\cdot$ \textcolor{white}{:: 916 151 56 5}}}
 
 %============================================================================%
-%
 %	DOCUMENT END
-%
 %============================================================================%
 \end{document}
+
