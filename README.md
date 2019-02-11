@@ -13,7 +13,7 @@ Both versions were created with Latex, feel free to use any of the templates if 
     </tr>
     <tr>
         <td>
-            <img src="https://github.com/ricardojaferreira/resume/blob/master/condensed/latex_resume_condensed_thumbnail.png" alt="Resume Latex one page version" height="45%" />
+            <img src="https://github.com/ricardojaferreira/resume/blob/master/condensed/condensed.pdf" alt="Resume Latex one page version" height="45%" />
         </td>
         <td>
             <img src="" alt="Resume latex modern version extended" height="45%"/></td>
