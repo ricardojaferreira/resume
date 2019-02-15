@@ -18,8 +18,10 @@ Both versions were created with Latex, feel free to use any of the templates if 
             </a>
         </td>
         <td>
-            <img src="" alt="Resume latex modern version extended" height="45%"/></td>
+            <a href="https://github.com/ricardojaferreira/resume/blob/master/extended/extended.pdf">
+                <img src="/extended/latex_resume_extended_thumbnail.png" alt="Resume latex modern version extended" height="45%"/>
+            </a>
        </td>
-    </tr>
+    </tr
 </table>
 
