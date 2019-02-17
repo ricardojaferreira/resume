@@ -55,6 +55,7 @@
 % for example, change the margins to 2 inches all round
 \geometry{top=1cm, bottom=-.6cm, left=0.4cm, right=1cm} 	
 
+
 %less space between header and content
 \setlength{\headheight}{-5pt}		
 
@@ -115,25 +116,13 @@
 \definecolor{boldgrey}{RGB}{170,170,170}
 \definecolor{boldblue}{RGB}{7,45,171}
 
-% \usepackage{hyperref}
-% \hypersetup{
-%     colorlinks=true,
-%     linkcolor=black,
-%     filecolor=black,      
-%     urlcolor=black,
-% }
-
-\usepackage[colorlinks = true,
-            linkcolor=black,
-            urlcolor=black,
-            citecolor=black,
-            anchorcolor=black]{hyperref}
-
-% Allow different colors for links in the same document
-\newcommand{\customHref}[1]{
-    \hypersetup{urlcolor=#1}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=black,      
+    urlcolor=sectcol,
 }
-
 %============================================================================%
 %	DEFINITIONS
 %============================================================================%
@@ -180,7 +169,7 @@
 % param 1: section title
 %
 \newcommand{\cvsection}[2]{
-    \colorbox{sectcol}{\mystrut\makebox[1\mpwidth][l]{\hspace{1pt}\textcolor{white}{#1}\hspace{4pt} \textbf{\textcolor{white}{\uppercase{#2}}}\hspace{4pt}
+    \colorbox{sectcol}{\mystrut\makebox[1\mpwidth][l]{\hspace{1pt}\textcolor{white}{\csname fa#1\endcsname}\hspace{4pt} \textbf{\textcolor{white}{\uppercase{#2}}}\hspace{4pt}
 }}\\
 }
 
@@ -188,7 +177,7 @@
 % param 1: meta section title
 %
 \newenvironment{metasection}[1] {
-	\vspace{1pt}
+	\vspace{6pt}
 	\begin{center}
 		\textcolor{black}{\large{\uppercase{#1}}}\\
 	\normalsize
@@ -207,7 +196,7 @@
 % param 4:	what was your position
 % param 5:	some words about your contributions
 %
-\newcommand{\eventbullet}{\hspace{-4.4pt}\small{\faCircle} \hspace{5pt}}
+\newcommand{\eventbullet}{\hspace{-3.9pt}\small{\faDotCircleO} \hspace{5pt}}
 
 \newcommand{\cvevent}[5]
 {
@@ -246,7 +235,7 @@
 }
 
 \newcommand{\customicon}[2]{
-	\hspace{87pt}{#1}\hspace{2pt}{#2}
+	\hspace{87pt}{\csname fa#1\endcsname}\hspace{2pt}{#2}
 }
 
 % creates a stretched box as 
@@ -283,15 +272,17 @@
 %	ICON-SET EMBEDDING
 %---------------------------------------------------------------------------------------- 
 
-\newcommand{\icon}[3]{\makebox(#2, #2){\textcolor{#3}{#1}}}	%icon shortcut
+\newcommand{\icon}[3]{\makebox(#2, #2){\textcolor{#3}{\csname fa#1\endcsname}}}	%icon shortcut
 \newcommand{\icontext}[4]{ 						%icon with text shortcut
 	\vcenteredhbox{\icon{#1}{#2}{#4}} \vcenteredhbox{\textcolor{#4}{#3}}
 }
 
 \newcommand{\name}{Ricardo Jorge de Ara\'ujo Ferreira}
-\newcommand{\email}{\href{mailto:ricarraf@gmail.}{ricarraf@gmail.com}}
-\newcommand{\github}{\textcolor{sectcol}{\href{https://www.github.com/ricardojaferreira}{/ricardojaferreira}}}
-\newcommand{\linkedin}{\href{https://www.linkedin.com/in/RicardoAraujoFerreira}{/RicardoAraujoFerreira}}
+\newcommand{\email}{\email{ricarraf@gmail.com}}
+\newcommand{\github}{\href{url}{https://github.com/ricarraf}}
+\newcommand{\linkedin}{\href{www.linkedin.com/in/RicardoAraujoFerreira}{/RicardoAraujoFerreira}}
+
+
 
 \newcommand{\identcontent}{\hspace{6pt}}
 
@@ -310,11 +301,11 @@
 
 \begin{metasection}{Contact}
 
-	\icontext{\faMapMarker*}{12}{Porto, Portugal}{black}\\[6pt]
-	\icontext{\faMobile*}{12}{+351 91 615 15 65}{black}\\[6pt]
-	\icontext{\faPaperPlane}{12}{\email}{black}\\[6pt]
-	\icontext{\faGithub}{12}{\github}{black}\\[6pt]
-	\icontext{\faLinkedin}{12}{\linkedin}{black}\\[6pt]
+	\icontext{MapMarker}{12}{Porto, Portugal}{black}\\[6pt]
+	\icontext{MobilePhone}{12}{+351 91 615 15 65}{black}\\[6pt]
+	\icontext{Send}{12}{ricarraf@gmail.com}{black}\\[6pt]
+	\icontext{Github}{12}{github.com/ricardojaferreira}{black}\\[6pt]
+	\icontext{Linkedin}{12}{\linkedin}{black}\\[6pt]
 
 \end{metasection}
 %---------------------------------------------------------------------------------
@@ -323,40 +314,43 @@
 
 \begin{metasection}{Programming Languages}
 	\begin{tabular}{ll}
-		JAVA & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
-		PHP & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
-		JavaScript & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
-		C\textbackslash C++ & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\icon{\faStar}{12}{black}\\[6pt] %chktex 1	
-		Python & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\icon{\faStar}{12}{black}\icon{\faStar}{12}{black}\\[6pt] %chktex 1	
+		JAVA & \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{black}\\[6pt]
+		PHP & \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{black}\\[6pt]
+		JavaScript & \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{black}\\[6pt]
+		C\textbackslash C++ & \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{black}\icon{Star}{12}{black}\\[6pt] %chktex 1	
+		Python & \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{black}\icon{Star}{12}{black}\icon{Star}{12}{black}\\[6pt] %chktex 1	
 	\end{tabular}
 \end{metasection}
 
 
 \begin{metasection}{Technologies}
+
 	\textcolor{black}{
-        PlayFramework {\tiny \faCircle} Spring {\tiny \faCircle} Zend Famework {\tiny \faCircle} Angular {\tiny \faCircle} Apache {\tiny \faCircle} Nginx {\tiny \faCircle} Git {\tiny \faCircle} MySql / MariaDB {\tiny \faCircle} PostgreSQL {\tiny \faCircle} MongoDB {\tiny \faCircle} Docker {\tiny \faCircle} ElasticSearch {\tiny \faCircle} Couchbase {\tiny \faCircle} RabbitMQ {\tiny \faCircle} Magento {\tiny \faCircle} \LaTeX %chktex 1	
+        PlayFramework {\tiny \icon{Circle}{6}{black}} Spring {\scriptsize \faCircle} Zend Famework {\tiny \icon{Circle}{6}{black}} Angular {\scriptsize \faCircle} Apache {\scriptsize \faCircle} Nginx {\scriptsize \faCircle} Git {\scriptsize \faCircle} MySql / MariaDB {\scriptsize \faCircle} MongoDB {\scriptsize \faCircle} ElasticSearch {\scriptsize \faCircle} Couchbase {\scriptsize \faCircle} RabbitMQ {\scriptsize \faCircle} \LaTeX %chktex 1	
 	}
 \end{metasection}
 
-\begin{metasection}{Languages}
+		\begin{metasection}{Languages}
 	\begin{tabular}{ll}
-		Portuguese & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\\[6pt]
-		Italian & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\\[6pt]
-		English & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
+		Portuguese & \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\\[6pt]
+		Italian & \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\\[6pt]
+		English & \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{black}\\[6pt]
 	\end{tabular}
 \end{metasection}
 
 \begin{metasection}{Operating Systems}
-	\textcolor{white}{\\ \LARGE{\icon{\faApple}{24}{black} \icon{\faLinux}{24}{black} \icon{\faWindows}{24}{black}}}
+
+	\textcolor{white}{\LARGE{\icon{Apple}{24}{black} \icon{Linux}{24}{black} \icon{Windows}{24}{black}}}
+
 \end{metasection}
 
 \begin{metasection}{Activities}
 	\\
-	\textcolor{black}{\large{\icon{\faPlane}{20}{black} \icon{\faHeadphones}{20}{black}  \icon{\faSwimmer}{20}{black} \icon{\faLaptop}{20}{black}}}
+	\textcolor{black}{\large{\icon{Plane}{20}{black} \icon{Headphones}{20}{black}  \icon{Bicycle}{20}{black} \icon{Laptop}{20}{black}}}
 \end{metasection}
 
 \begin{center}
-    See the extended version at \customHref{sectcol}\href{https://git.io/fh5zG}{https://git.io/fh5zG}.
+    See the extended version at \href{https://git.io/fhQUd}{https://git.io/fhQUd}.
 \end{center}
 
 \end{minipage}}%
@@ -370,6 +364,7 @@
 %-----------------------------------------------------------------------------------
 %	HEADER IMAGE
 %----------------------------------------------------------------------------------
+
 
 %\hspace{-1.6cm}
 %\includegraphics[trim= 0 250 0 270,clip,width=1\linewidth+3.1cm]{myfoto.jpg}	%trimming relative to image size!
@@ -391,7 +386,7 @@
 %----------------------------------------------------------------------------------
 %	STATUS
 %----------------------------------------------------------------------------------
-\cvsection{\faUser}{Summary}
+\cvsection{User}{Summary}
 
 \begin{tabular*}{1.0\mpwidth}{@{\identcontent}| p{0.97\mpwidth}} %chktex 44	
 	\vspace{0.1pt}
@@ -403,25 +398,26 @@
 %----------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------
-\cvsection{\faBriefcase}{Experience}
+\cvsection{Briefcase}{Experience}
 
 \begin{tabular*}{0.5\mpwidth}{@{\identcontent}|@{\eventbullet} p{0.97\mpwidth}} %chktex 44
-	\newcvevent{Web Engineer - Fullstack Developer}{2018/07 - now}{Jumia - Porto Tech Center}{Porto, Portugal}{Development of web applications using JAVA and PHP frameworks;}{Analysis and implementation of new software solutions.} %chktex 8
+	\newcvevent{Web Engineer - Fullstack Developer}{2018/06 - now}{Jumia - Porto Tech Center}{Porto, Portugal}{Development of web applications using JAVA and PHP frameworks;}{Analysis and implementation of new software solutions.} %chktex 8
 	\\
-    \newcvevent{Software Engineer - Fullstack Developer}{2018/02 - 2018/07}{7Skin, Lda - E-Commerce}{Porto, Portugal}{Development of ecommerce solutions using Magento;}{Development of in-house software to improve productivity.} %chktex 8
+    \newcvevent{Web Engineer - Fullstack Developer}{2018/02 - 2018/06}{7Skin, Lda - Ecommerce}{Porto, Portugal}{Development of ecommerce solutions using Magento;}{Development of internal software to improve productivity.} %chktex 8
 	\\
-    \newcvevent{Software Engineer - Fullstack Developer}{2014/05 - 2018/02}{GravityDemand, Lda - E-Commerce}{Penafiel, Portugal}{Development of software for ecommerce and marketing solutions;}{Development and integration with external services (REST and other API's).} %chktex 8
+    \newcvevent{Web Engineer - Fullstack Developer}{2014/05 - 2018/02}{GravityDemand, Lda - Ecommerce}{Penafiel, Portugal}{Development of software for ecommerce and marketing solutions;}{Development and integration with external services (REST and other API's).} %chktex 8
 	\\
-    \newcvevent{R\&D - Engineer}{2012/01 - 2014/05}{INESC - Institute for System and Computer Engineering}{Porto, Portugal}{Research and testing in the power energy field (software and hardware);}{Validate emerging concepts in Smart-Grids with prototypes and models.} %chktex 8
+    \newcvevent{R\&D - Engineer}{2011/01 - 2011/09}{INESC - Institute for System and Computer Engineering}{Porto, Portugal}{Research and testing in the power energy field (software and hardware);}{Validate emerging concepts in Smart-Grids with prototypes and models.} %chktex 8
 	\\
-    \newcvevent{Automation Engineer}{2008/08 - 2012/01}{Efacec, Sistemas de Engenharia}{Maia, Portugal}{Development of control and automation systems;}{Management of large information systems based on UNIX platforms.} %chktex 8
+    \newcvevent{Automation Engineer}{2008/08 - 2011/01}{Efacec, Sistemas de Engenharia}{Maia, Portugal}{Development of control and automation systems;}{Management of large information systems based on UNIX platforms.} %chktex 8
 \end{tabular*} 
+
 
 \vspace{12pt}
 % %---------------------------------------------------------------------------------------
 % %	EDUCATION SECTION
 % %--------------------------------------------------------------------------------------
-\cvsection{\faGraduationCap}{Education}
+\cvsection{GraduationCap}{Education}
 
 \begin{tabular*}{0.5\mpwidth}{@{\identcontent}|@{\eventbullet} p{0.97\mpwidth}} %chktex 44
 	\newcvevent{M.Sc.\ in Informatics and Computation Engineering}{Present}{Faculdade de Eng.\ da Universidade do Porto}{Porto, Portugal}{Currently at the 4rd Year, 2 more to finish the graduation.}{.}

@@ -89,11 +89,17 @@
 \renewcommand{\headrulewidth}{0pt}
 
 %----------------------------------------------------------
-%PDF bookmarks
-\usepackage{color,hyperref}
-\hypersetup{colorlinks,breaklinks,
-            linkcolor=sectcol,urlcolor=sectcol,
-            anchorcolor=sectcol,citecolor=sectcol}
+\usepackage[colorlinks = true,
+            linkcolor=black,
+            urlcolor=black,
+            citecolor=black,
+            anchorcolor=black]{hyperref}
+
+% Allow different colors for links in the same document
+\newcommand{\customHref}[1]{
+    \hypersetup{urlcolor=#1}
+}
+
 
 
 %-----------------------------------------------------------
@@ -156,10 +162,10 @@
 \newcommand{\faddress}{Rua Conde de Ferreira 97, 4$^{\circ}$D }
 \newcommand{\saddress}{4580 - 407 Paredes} %chktex 8
 \newcommand{\taddress}{Paredes, Portugal}
-\newcommand{\mobilephone}{\faMobile\hspace{3pt}+351 91 615 15 65}
-\newcommand{\princemail}{\faPaperPlane\hspace{3pt}\email{ricarraf@gmail.com}}
-\newcommand{\github}{\faGithub\hspace{3pt}\href{url}{/ricardojaferreira}}
-\newcommand{\linkedin}{\faLinkedin/\hspace{3pt}\href{url}{/RicardoAraujoFerreira}}
+\newcommand{\mobilephone}{\faMobile*\hspace{3pt}+351 91 615 15 65}
+\newcommand{\princemail}{\faPaperPlane\hspace{3pt}\customHref{black}\href{mailto:ricarraf@gmail.com}{ricarraf@gmail.com}}
+\newcommand{\github}{\faGithub\hspace{3pt}{\href{https://www.github.com/ricardojaferreira}{/ricardojaferreira}}}
+\newcommand{\linkedin}{\faLinkedin\hspace{3pt}\href{https://www.linkedin.com/in/RicardoAraujoFerreira}{/RicardoAraujoFerreira}}
 
 %-----------------------------------------------------------
 
@@ -176,7 +182,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{tabular*} {7in}{ll@{\extracolsep{\fill}}r}
+\begin{tabular*} {6.9in}{ll@{\extracolsep{\fill}}r}
 \multirow{9}{*}{\includegraphics[scale=0.25]{img/picture.jpg}} & \hspace{0.2in} \textbf{\Large \name} & \textbf{\birth}\\
  & \hspace{0.2in} Electrical and Computer Science Engineer (M.Sc.) 	& 			 \\
   & \hspace{0.2in} {\footnotesize Student of Master in Informatics and Computing Engineering\par} 	& 			 \\
@@ -200,7 +206,7 @@
 \begin{center}
 	\parbox{6.762in}{I obtained my master degree in Electrical and Computer science Engineering at the Faculdade de Engenharia da Universidade do Porto, Portugal in 2008. My master thesis was in the field of Power electronics, control drives and measurement techniques, resulting in a group of power converters to be used in a solar Electric Car. %chktex 1
 	
-	Since then I have been trying to acquire experience and pursuing challenging job opportunities. For 2,5 years I have worked at Efacec, SA, as a control/automation engineer. At first my main activity was the development of automation and telecontrol solutions for electric power systems. When I acquired more experience I have started training new employees and to manage engineering projects, coordinate teams, allocate resources, supervising and find ways to improve processes and reduce the developing time.
+	Since then I have been trying to acquire experience and pursuing challenging job opportunities. For 3,5 years I have worked at Efacec, SA, as a control/automation engineer. At first my main activity was the development of automation and telecontrol solutions for electric power systems. When I acquired more experience I have started training new employees and to manage engineering projects, coordinate teams, allocate resources, supervising and find ways to improve processes and reduce the developing time.
 	
 	When a new opportunity arose at the Institute for Systems and Computer Science of Porto to integrate the renewable energies team I took it. At this job, as a researcher in the field of power converters for electric vehicles and intelligent power grids, I have increased my technical and planning skills. I had also the opportunity to write scientific papers and to present them on international conferences. Being an R\&D engineer was a great opportunity to go out of my comfort zone and to test new and challenging areas. During this job I found out that I really love to develop software.
 	
@@ -321,10 +327,12 @@
 \item
 	Programming and Markup Languages
 	\begin{itemize}
-		\resitem{{\bf Expert:} C/C++, JAVA, CSS, HTML5, JSON, SQL, PHP, JavaScript, \LaTeX}
-		\resitem{{\bf Intermediate:} XML, C\#, Pascal, Visual Basic}
-	\end{itemize}
-	
+		\resitem{{\bf Expert:}  JAVA, CSS, HTML5, JSON, SQL, PHP, JavaScript, C/C++, \LaTeX}
+		\resitem{{\bf Intermediate:} Python, XML, C\#, Pascal, Visual Basic}
+    \end{itemize}
+\end{itemize} 
+\hspace{20pt}
+\begin{itemize}
 \item
 	Frameworks
 	\begin{itemize}
