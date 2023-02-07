@@ -180,7 +180,7 @@
 % param 1: section title
 %
 \newcommand{\cvsection}[2]{
-    \colorbox{sectcol}{\mystrut\makebox[1\mpwidth][l]{\hspace{1pt}\textcolor{white}{#1}\hspace{4pt} \textbf{\textcolor{white}{\uppercase{#2}}}\hspace{4pt}
+    \colorbox{sectcol}{\mystrut\makebox[1\mpwidth][l]{\hspace{1pt}\large{\textcolor{white}{#1}}\hspace{4pt} \large{\textbf{\textcolor{white}{\uppercase{#2}}}}\hspace{4pt}
 }}\\
 }
 
@@ -232,17 +232,28 @@
 
 \newcommand{\newcvevent}[6]
 {
-	\begin{tabular*}{1\mpwidth}{p{0.68\mpwidth}  x{0.27\mpwidth}}
-		\textcolor{sectcol}{#1} & \textcolor{sectcol}{#2}
+	\begin{tabular*}{1\mpwidth}{p{0.68\mpwidth}  x{0.30\mpwidth}}
+		\large{\textcolor{sectcol}{#1}} & \large{\textcolor{sectcol}{#2}}
 	\end{tabular*}
-	\begin{tabular*}{1\mpwidth}{p{0.65\mpwidth}  x{0.30\mpwidth}}
-		{\textit{#3}} & {#4}
+	\begin{tabular*}{1\mpwidth}{p{0.53\mpwidth}  x{0.45\mpwidth}}
+		\large{{\textit{#3}}} & \large{{#4}}
 	\end{tabular*}
-	\begin{tabular*}{0.5\mpwidth}{p{\mpwidth}}
-		\larrow{softcol}  #5\\[3pt]
-		\larrow{softcol}  #6\\[6pt]
+	\begin{tabular*}{0.2\mpwidth}{p{\mpwidth}}
+		\larrow{softcol}  \large{#5}\\[3pt]
+		\larrow{softcol}  \large{#6}\\[6pt]
     \end{tabular*} 
-	\vspace{8pt}
+	\vspace{2pt}
+}
+
+\newcommand{\shortcvevent}[4]
+{
+	\begin{tabular*}{1\mpwidth}{p{0.68\mpwidth}  x{0.30\mpwidth}}
+		\large{\textcolor{sectcol}{#1}} & \large{\textcolor{sectcol}{#2}}
+	\end{tabular*}
+	\begin{tabular*}{1\mpwidth}{p{0.68\mpwidth}  x{0.30\mpwidth}}
+		\large{{\textit{#3}}} & \large{{#4}}
+	\end{tabular*}
+	\vspace{2pt}
 }
 
 \newcommand{\customicon}[2]{
@@ -302,7 +313,7 @@
 %============================================================================%
 \begin{document}
 \fcolorbox{white}{white}{
-    \begin{minipage}[c][0.95\textheight][t]{0.30\linewidth}
+    \begin{minipage}[c][0.95\textheight][t]{0.23\linewidth}
 
 %
 \begin{center}
@@ -325,10 +336,10 @@
 \begin{metasection}{Programming Languages}
 	\begin{tabular}{ll}
 		JAVA & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
+  		Python & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt] %chktex 1	
 		Scala & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
 		JavaScript & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
 		C\textbackslash C++ & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\icon{\faStar}{12}{black}\\[6pt] %chktex 1	
-		Python & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\icon{\faStar}{12}{black}\icon{\faStar}{12}{black}\\[6pt] %chktex 1	
 		PHP & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\icon{\faStar}{12}{black}\icon{\faStar}{12}{black}\\[6pt] %chktex 1	
 	\end{tabular}
 \end{metasection}
@@ -336,15 +347,15 @@
 
 \begin{metasection}{Technologies}
 	\textcolor{black}{
-        \\ Spring {\tiny \faCircle} Akka {\tiny \faCircle} Apache Storm {\tiny \faCircle} Apache Cassandra {\tiny \faCircle} Apache {\tiny \faCircle} Nginx {\tiny \faCircle} Git {\tiny \faCircle} MySql / MariaDB {\tiny \faCircle} PostgreSQL {\tiny \faCircle} MongoDB {\tiny \faCircle} Docker {\tiny \faCircle} Kafka {\tiny \faCircle} Couchbase {\tiny \faCircle} RabbitMQ {\tiny \faCircle} Hazelcast {\tiny \faCircle} Jenkins {\tiny \faCircle} Cucumber %chktex 1	
+        \\ Spring {\tiny \faCircle} Django {\tiny \faCircle} React {\tiny \faCircle} Apache Storm {\tiny \faCircle} Apache Cassandra {\tiny \faCircle} Apache {\tiny \faCircle} Nginx {\tiny \faCircle} Git {\tiny \faCircle} MySql / MariaDB {\tiny \faCircle} PostgreSQL {\tiny \faCircle} MongoDB {\tiny \faCircle} Docker {\tiny \faCircle} Kafka {\tiny \faCircle} Couchbase {\tiny \faCircle} Hazelcast {\tiny \faCircle} Jenkins/CircleCI {\tiny \faCircle} Cucumber %chktex 1	
 	}
 \end{metasection}
 
 \begin{metasection}{Languages}
 	\begin{tabular}{ll}
 		Portuguese & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\\[6pt]
-		Italian & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\\[6pt]
-		English & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
+  		English & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
+		Italian & \icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{complcol}\icon{\faStar}{12}{black}\\[6pt]
 	\end{tabular}
 \end{metasection}
 
@@ -362,7 +373,7 @@
 \end{center}
 
 \end{minipage}}
-\fcolorbox{white}{white}{\begin{minipage}[c][0.95\textheight][t]{0.72\linewidth}
+\fcolorbox{white}{white}{\begin{minipage}[c][0.95\textheight][t]{0.77\linewidth}
 
 
 %-----------------------------------------------------------------------------------
@@ -381,8 +392,8 @@
 %	SUMMARY
 %----------------------------------------------------------------------------------------
 \textbf{\huge \name} \\
+\Large Informatics and Computing Engineering (M.Sc.) \\
 \Large Electrical and Computer Science Engineer (M.Sc.) \\
-\large Student of Master in Informatics and Computing Engineering \\
 %
 %============================================================================%
 %
@@ -396,11 +407,11 @@
 \cvsection{\faUser}{Summary}
 
 \begin{tabular*}{1.0\mpwidth}{@{\identcontent}| p{0.97\mpwidth}} %chktex 44	
-	\vspace{0.1pt}
-	I am currently working has a Backend Engineer in an Agile (scrum) environment with modern technologies, previleging good quality code and architectures. To learn more about software development I have started the Master Degree in Informatics and Computing Engineering at Faculdade de Engenharia, I am currently at finishing my master thesis about evolutionary architectures.
+	\vspace{-0.2pt}
+	I am currently working as a Software Engineer in an Agile environment with modern technologies, privileging good quality code and architectures, helping to build a state-of-the-art AI tool. I have worked with many technologies and am always open to adding new ones to my portfolio.
 \end{tabular*}
 
-\vspace{12pt}
+\vspace{5pt}
 
 %----------------------------------------------------------------------------------
 %	EXPERIENCE
@@ -408,25 +419,29 @@
 \cvsection{\faBriefcase}{Experience}
 
 \begin{tabular*}{0.5\mpwidth}{@{\identcontent}|@{\eventbullet} p{0.95\mpwidth}} %chktex 44
-    \newcvevent{Backend Engineer}{2019/12 - now}{Paddy Power Betfair \& FanDuel - Flutter Entertainment Plc}{Porto, Portugal}{Execute full software development life cycle in a microservices architecture that processes 135M transactions every 24h;}{Deploy and maintain applications in continuous integration platform.} %chktex 8
+    \newcvevent{Backend Engineer}{2021/06 - now}{Hyperscience, Ltd}{New York, USA (Remote)}{Designing abstractions, APIs and tools to connect with ML modules}{Development of the inteligent document processing (IDP) tool written in Python} %chktex 8
 	\\
-    \newcvevent{Web Engineer - Fullstack Developer}{2018/02 - 2019/12}{Jumia - Porto Tech Center}{Porto, Portugal}{Development of web applications using JAVA frameworks, like Spring boot and Play;}{Working in a team with the DevOps culture and interest in state of the art thechnology.} %chktex 8
+    \newcvevent{Backend Engineer}{2019/12 - 2021/06}{Paddy Power Betfair \& FanDuel - Flutter Entertainment Plc}{Porto, Portugal}{Execute full software development life cycle in a microservices architecture that processes 135M transactions every 24h;}{Deploy and maintain applications in continuous integration platform.} %chktex 8
 	\\
-    \newcvevent{Software Engineer - Fullstack Developer}{2014/05 - 2018/02}{GravityDemand, Lda - E-Commerce}{Penafiel, Portugal}{Development of software for ecommerce and marketing solutions;}{Development and integration with external services (REST and other API's).} %chktex 8
+    \shortcvevent{Web Engineer - Fullstack Developer}{2018/02 - 2019/12}{Jumia - Porto Tech Center}{Porto, Portugal} %chktex 8
 	\\
-    \newcvevent{R\&D - Engineer}{2012/01 - 2014/05}{INESC - Institute for System and Computer Engineering}{Porto, Portugal}{Research and testing in the power energy field (software and hardware);}{Validate emerging concepts in Smart-Grids with prototypes and models.} %chktex 8
+    \shortcvevent{Software Engineer - Fullstack Developer}{2014/05 - 2018/02}{GravityDemand, Lda - E-Commerce}{Penafiel, Portugal} %chktex 8
+    \\
+    \shortcvevent{R\&D - Engineer}{2012/01 - 2014/05}{Institute for Systems and Computer Engineering}{Porto, Portugal} %chktex 8
+    \\
+    \shortcvevent{Control and Automation Engineer}{2008/12 - 2012/01}{Efacec, Engineering Systems}{Maia, Portugal} %chktex 8
 \end{tabular*} 
 
-\vspace{12pt}
+\vspace{8pt}
 % %---------------------------------------------------------------------------------------
 % %	EDUCATION SECTION
 % %--------------------------------------------------------------------------------------
 \cvsection{\faGraduationCap}{Education}
 
 \begin{tabular*}{0.5\mpwidth}{@{\identcontent}|@{\eventbullet} p{0.97\mpwidth}} %chktex 44
-	\newcvevent{M.Sc.\ in Informatics and Computation Engineering}{Present}{Faculdade de Eng.\ da Universidade do Porto}{Porto, Portugal}{Principal topics: Software Architectures, Computation Theory, Algorithms, Discret Mathematics, Formal Tests in Software, Operating Systems;}{Thesis: A framework for driving evolutionary architectures.}
+	\newcvevent{M.Sc.\ in Informatics and Computation Engineering}{2020}{Faculdade de Eng.\ da Universidade do Porto}{Porto, Portugal}{Main topics: Software Architectures, Computation Theory, Algorithms, Discrete Mathematics, Formal Tests in Software, Operating Systems;}{Thesis: Recovery of Software Architectures (17 out of 20)}
 	\\
-	\newcvevent{M.Sc.\ in Electrical and Computers Engineering}{Present}{Faculdade de Eng.\ da Universidade do Porto}{Porto, Portugal}{Specialization: Automation and Control Systems}{Thesis: Solar Car - Control and development. (17 out of 20)} %chktex 8
+	\newcvevent{M.Sc.\ in Electrical and Computers Engineering}{2008}{Faculdade de Eng.\ da Universidade do Porto}{Porto, Portugal}{Specialization: Automation and Control Systems}{Thesis: Solar Car - Control and development. (17 out of 20)} %chktex 8
 \end{tabular*}
 \end{minipage}}
 
@@ -436,7 +451,8 @@
 
 \null %chktex 1
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut\small \textcolor{white}{Resume 2021 | Ricardo Ferreira :: ricarraf@gmail.com} $\cdot$ \textcolor{white}{:: 916 151 56 5}}}
+\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut\small \textcolor{white}{Resume 2023 | Ricardo Ferreira :: ricarraf@gmail.com} $\cdot$ \textcolor{white}{:: 916 151 56 5}}}
+\vspace{0.1pt}
 
 %============================================================================%
 %	DOCUMENT END
